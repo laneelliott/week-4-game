@@ -1,0 +1,6 @@
+.character {
+	border: 2px solid green;
+}
+.character-image img {
+	width: 100%;
+}
