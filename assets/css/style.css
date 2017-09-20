@@ -2,5 +2,11 @@
 	border: 2px solid green;
 }
 .character-image img {
-	width: 100%;
+	width: 50%;
+}
+.attack {
+	display: none;
+}
+#gameover {
+	display: none;
 }
