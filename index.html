@@ -9,6 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+
+	<header>
+		
+	</header>
 	
 	<!-- Main Content Container -->
 	<section class="container" id="game-container">
@@ -26,12 +30,16 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row" id="player">
-					<div class="col-sm-3 attack">
-						<button class="btn btn-attack">ATTACK</button>
+					<div class="col-sm-3 attack text-center">
+						<button class="btn btn-warning btn-attack">ATTACK<br><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span></button>
 					</div> <!-- end col-sm-3 -->
-					<div class="col-sm-6 attack">
-						<h4 class="damage-dealt"></h4>
-						<h4 class="damage-received"></h4>
+					<div class="col-sm-5 attack">
+						<div class="alert alert-success" role="alert">
+							<h4 class="damage-dealt"></h4>
+						</div>
+						<div class="alert alert-danger" role="alert">
+							<h4 class="damage-received"></h4>
+						</div>
 					</div> <!-- end col-sm-6 -->
 				</div> <!-- end player -->
 			</div> <!-- end col-sm-12 -->

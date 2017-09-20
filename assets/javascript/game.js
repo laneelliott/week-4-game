@@ -39,7 +39,7 @@ var maul = {
 //REUSABLE GAME FUNCTIONS
 // function build character object buildCharacter(character, location)
 function buildCharacter(character, locationId) {
-	var htmlString = '<div class="col-sm-3 text-center character" id="' + character.objectName + '"><h4>' + character.name +'</h4>' + '<div class="img-responsive character-image"><img src="assets/images/' + character.profile + '"></div>' + '<div class="hp">' + character.hp + '</div><div class="progress hp-bar"><div class="progress-bar" role="progressbar" aria-valuenow="'+ hpPercent(character) + '" aria-valuemin="0" aria-valuemax="100" style="width: '+ hpPercent(character) + '%;"></div></div></div> <!-- end character -->'
+	var htmlString = '<div class="col-sm-3 text-center character" id="' + character.objectName + '"><h4>' + character.name +'</h4>' + '<div class="img-responsive character-image"><img src="assets/images/' + character.profile + '"></div>' + '<div class="hp">' + character.hp + '/'+ character.hpmax +'</div><div class="progress hp-bar"><div class="progress-bar" role="progressbar" aria-valuenow="'+ hpPercent(character) + '" aria-valuemin="0" aria-valuemax="100" style="width: '+ hpPercent(character) + '%;"></div></div></div> <!-- end character -->'
 	$('#'+ locationId).prepend(htmlString);
 }
 
@@ -116,14 +116,14 @@ function attack(){
 
 //Changes the values of the hp bars
 function updateHealth(character){
-	$('#'+ character.objectName+' .hp').html(character.hp);
+	$('#'+ character.objectName+' .hp').html(character.hp + '/' + character.hpmax);
 	$('#'+ character.objectName+' .hp-bar .progress-bar').width(hpPercent(character)+'%');
 }
 
 //Displays the events of the attack before the attack power is updated
 function displayResults(){
 	$('.damage-dealt').html('You attacked ' + chosenEnemyObj.name + ' for ' + chosenOneObj.attack + ' damage.');
-	$('.damage-received').html(chosenEnemyObj.name + ' attacked you for ' + chosenEnemyObj.attack + ' damage.');
+	$('.damage-received').html(chosenEnemyObj.name + ' attacked you for ' + chosenEnemyObj.counter + ' damage.');
 }
 
 //Increases the attack power of the character by 6 points
